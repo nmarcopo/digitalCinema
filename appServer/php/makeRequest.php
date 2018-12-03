@@ -15,7 +15,7 @@ $jsonStuff = json_decode($result, true);
 $jsonStuff = $jsonStuff['FileStatuses']['FileStatus'];
 
 foreach($jsonStuff as $file){
-    echo '<a href="watch.php?'. $file['pathSuffix'] .'" class="list-group-item list-group-item-action active">
+    echo '<a href="watch.php?vid='. $file['pathSuffix'] .'" class="list-group-item list-group-item-action active videoListItem">
             '. $file['pathSuffix'] .'
         </a>';
 }

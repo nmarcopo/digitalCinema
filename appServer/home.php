@@ -24,6 +24,9 @@
         <div class="jumbotron">
             <h1 class="display-3">Home</h1>
             <p class="lead">Search for some videos.</p>
+            <div class="d-flex justify-content-center">
+                <input id="search" class="form-control mr-sm-2 w-50" type="text" placeholder="Search">
+            </div>
             <hr class="my-4">
 
             <!-- <p class="lead"> -->
@@ -122,6 +125,7 @@
 
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap/bootstrap.min.js"></script>
+        <script src="js/search.js"></script>
 </body>
 
 </html>

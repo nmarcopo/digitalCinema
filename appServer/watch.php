@@ -27,10 +27,16 @@
             <hr class="my-4">
             <div class="text-center justify-content-center d-flex">
                 <div class="card mb-3">
-                    <h3 class="card-header">Rubik.mp4</h3>
+                    <h3 class="card-header"><?php echo $_GET['vid']?></h3>
                     <video width="100%" height="200" controls>
-                        <source src="http://34.224.89.168:50075/webhdfs/v1/rubik320.ogv?op=OPEN&namenoderpcaddress=ec2-54-88-201-242.compute-1.amazonaws.com:9000&offset=0"
-                            type='video/ogg; codecs="theora, vorbis"' preload="none">
+                        <source src="
+                        <?php
+                            $vid = $_GET['vid'];
+                            $command = escapeshellcmd("./php/master.py $vid");
+                            $run = shell_exec($command);
+                            echo $run;
+                        ?>
+                        " type='video/ogg; codecs="theora, vorbis"' preload="none">
                         Your browser does not support the video tag.
                     </video>
                 </div>
