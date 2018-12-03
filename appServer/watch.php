@@ -22,17 +22,17 @@
     <br><br>
     <div class="container">
         <div class="jumbotron">
-            <h1 class="display-3">Home</h1>
+            <h1 class="display-3">Watch</h1>
             <p class="lead">A video will show up here.</p>
             <hr class="my-4">
             <div class="text-center justify-content-center d-flex">
                 <div class="card mb-3">
                     <h3 class="card-header"><?php echo $_GET['vid']?></h3>
-                    <video width="100%" height="200" controls>
+                    <video width="100%" height="300" controls>
                         <source src="
                         <?php
                             $vid = $_GET['vid'];
-                            $command = escapeshellcmd("./php/master.py $vid");
+                            $command = escapeshellcmd("./php/master.py videos/$vid");
                             $run = shell_exec($command);
                             echo $run;
                         ?>
