@@ -38,17 +38,85 @@
                 <PARAM NAME="AutoPlay" VALUE="true" />
             </OBJECT> -->
             <!-- <embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org" version="VideoLAN.VLCPlugin.2"  width="100%"  height="100%" id="vlc" loop="yes" autoplay="yes" target="http://34.224.89.168:50075/webhdfs/v1/user/asura/test-dir/rubik320.mpg?op=OPEN&namenoderpcaddress=ec2-54-88-201-242.compute-1.amazonaws.com:9000&offset=0"></embed> -->
-            <video width="320" height="240" controls>
-                <source src="php/playmymovie.php?url=http://34.224.89.168:50075/webhdfs/v1/user/asura/test-dir/rubik320.mpg?op=OPEN&namenoderpcaddress=ec2-54-88-201-242.compute-1.amazonaws.com:9000&offset=0" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <div class="row">
+                <div class="col">
+                    <div class="card mb-3">
+                        <h3 class="card-header">Rubik.mp4</h3>
+                        <video width="100%" height="200" controls>
+                            <source src="http://34.224.89.168:50075/webhdfs/v1/rubik320.ogv?op=OPEN&namenoderpcaddress=ec2-54-88-201-242.compute-1.amazonaws.com:9000&offset=0"
+                                type='video/ogg; codecs="theora, vorbis"' preload="none">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-3">
+                        <h3 class="card-header">Rubik.mp4</h3>
+                        <video width="100%" height="200" controls>
+                            <source src="http://34.224.89.168:50075/webhdfs/v1/rubik320.ogv?op=OPEN&namenoderpcaddress=ec2-54-88-201-242.compute-1.amazonaws.com:9000&offset=0"
+                                type='video/ogg; codecs="theora, vorbis"' preload="none">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-3">
+                        <h3 class="card-header">Rubik.mp4</h3>
+                        <video width="100%" height="200" controls>
+                            <source src="http://34.224.89.168:50075/webhdfs/v1/rubik320.ogv?op=OPEN&namenoderpcaddress=ec2-54-88-201-242.compute-1.amazonaws.com:9000&offset=0"
+                                type='video/ogg; codecs="theora, vorbis"' preload="none">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card mb-3">
+                        <h3 class="card-header">Rubik.mp4</h3>
+                        <video width="100%" height="200" controls>
+                            <source src="http://34.224.89.168:50075/webhdfs/v1/rubik320.ogv?op=OPEN&namenoderpcaddress=ec2-54-88-201-242.compute-1.amazonaws.com:9000&offset=0"
+                                type='video/ogg; codecs="theora, vorbis"' preload="none">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-3">
+                        <h3 class="card-header">Rubik.mp4</h3>
+                        <video width="100%" height="200" controls>
+                            <source src="http://34.224.89.168:50075/webhdfs/v1/rubik320.ogv?op=OPEN&namenoderpcaddress=ec2-54-88-201-242.compute-1.amazonaws.com:9000&offset=0"
+                                type='video/ogg; codecs="theora, vorbis"' preload="none">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-3">
+                        <h3 class="card-header">Rubik.mp4</h3>
+                        <video width="100%" height="200" controls>
+                            <source src="http://34.224.89.168:50075/webhdfs/v1/rubik320.ogv?op=OPEN&namenoderpcaddress=ec2-54-88-201-242.compute-1.amazonaws.com:9000&offset=0"
+                                type='video/ogg; codecs="theora, vorbis"' preload="none">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action active">
+                    Cras justo odio
+                </a>
+                <a href="watch.php?<?php ?>" class="list-group-item list-group-item-action">Dapibus ac facilisis in
+                </a>
+                <a href="#" class="list-group-item list-group-item-action disabled">Morbi leo risus
+                </a>
+            </div>
         </div>
-    </div>
-    <div id="modalInsert"></div>
+        <div id="modalInsert"></div>
 
 
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap/bootstrap.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap/bootstrap.min.js"></script>
 </body>
 
 </html>
