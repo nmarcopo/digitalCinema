@@ -31,6 +31,7 @@
                     Up</button>
                 <button type="button" class="btn btn-primary bg-dark" data-toggle="modal" data-target="#logInModal">Log
                     In</button>
+                <a href="home.php"><button type="button" class="btn btn-primary bg-dark">Go Home</button></a>
             </p>
         </div>
     </div>
