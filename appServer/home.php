@@ -23,7 +23,7 @@
     <div class="container">
         <div class="jumbotron">
             <h1 class="display-3">Home</h1>
-            <p class="lead">A video will show up here.</p>
+            <p class="lead">Search for some videos.</p>
             <hr class="my-4">
 
             <!-- <p class="lead"> -->
@@ -38,7 +38,7 @@
                 <PARAM NAME="AutoPlay" VALUE="true" />
             </OBJECT> -->
             <!-- <embed type="application/x-vlc-plugin" pluginspage="http://www.videolan.org" version="VideoLAN.VLCPlugin.2"  width="100%"  height="100%" id="vlc" loop="yes" autoplay="yes" target="http://34.224.89.168:50075/webhdfs/v1/user/asura/test-dir/rubik320.mpg?op=OPEN&namenoderpcaddress=ec2-54-88-201-242.compute-1.amazonaws.com:9000&offset=0"></embed> -->
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col">
                     <div class="card mb-3">
                         <h3 class="card-header">Rubik.mp4</h3>
@@ -101,8 +101,8 @@
                         </video>
                     </div>
                 </div>
-            </div>
-            <div class="list-group">
+            </div> -->
+            <!-- <div class="list-group">
                 <a href="#" class="list-group-item list-group-item-action active">
                     Cras justo odio
                 </a>
@@ -110,6 +110,11 @@
                 </a>
                 <a href="#" class="list-group-item list-group-item-action disabled">Morbi leo risus
                 </a>
+            </div> -->
+            <div class="text-center justify-content-center d-flex">
+                <div class="w-50 list-group">
+                    <?php include 'php/makeRequest.php' ?>
+                </div>
             </div>
         </div>
         <div id="modalInsert"></div>

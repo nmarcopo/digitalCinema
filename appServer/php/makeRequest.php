@@ -10,10 +10,15 @@ if (curl_errno($ch)) {
     echo 'Error:' . curl_error($ch);
 }
 
-echo $result;
-echo "<br>";
-$jsonStuff = json_decode($result);
-echo $jsonStuff['FileStatuses'];
+// $result = "'" . $result . "'";
+$jsonStuff = json_decode($result, true);
+$jsonStuff = $jsonStuff['FileStatuses']['FileStatus'];
+
+foreach($jsonStuff as $file){
+    echo '<a href="watch.php?'. $file['pathSuffix'] .'" class="list-group-item list-group-item-action active">
+            '. $file['pathSuffix'] .'
+        </a>';
+}
 
 curl_close ($ch);
 ?>
