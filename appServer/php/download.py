@@ -47,7 +47,7 @@ HOST= "ec2-54-88-201-242.compute-1.amazonaws.com"
 PORT=str(50070)
 
 
-command = "curl -i -L --globoff "
+command = "curl -i -L "
 command += "\"http://" +HOST+":"+PORT+"/webhdfs/v1/"+PATH+"?op=OPEN\""
 #print(command)
 #command+=" | tac | tac "

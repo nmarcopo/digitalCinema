@@ -18,10 +18,10 @@ ini_set('max_input_time', 0);
 ini_set('max_execution_time', 300);
 
 // Check file size
-if ($_FILES["fileToUpload"]["size"] > 1e+7) {
-    alert("Sorry, your file is too large.");
-    $uploadOk = 0;
-}
+// if ($_FILES["fileToUpload"]["size"] > 1e+7) {
+//     alert("Sorry, your file is too large.");
+//     $uploadOk = 0;
+// }
 
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
