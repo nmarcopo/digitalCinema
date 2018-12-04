@@ -45,8 +45,49 @@
 
 <?php
 $vid = $_GET['fileName'];
-$command = escapeshellcmd("../php/upload.py videos/$vid ../videos/$vid");
-$run = shell_exec($command);
+// $command = escapeshellcmd("../php/upload.py videos/$vid ../videos/$vid");
+// $run = shell_exec($command);
+$array = [
+    "ip-172-31-26-8.ec2.internal"=> "100.26.36.129",
+"ip-172-31-31-46.ec2.internal" => "34.203.213.13",
+"ip-172-31-31-55.ec2.internal" => "34.224.89.168",
+];
+
+$url = "ec2-54-88-201-242.compute-1.amazonaws.com:50070/webhdfs/v1/videos/$vid?op=CREATE";
+$post = $_GET["fileName"];
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_HEADER, true);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+
+$result = curl_exec($ch);
+if (preg_match('~Location: (.*)~i', $result, $match)) {
+$location = trim($match[1]);
+}
+curl_close($ch);
+
+$badUrl = explode(":", $location);
+$badHost = ltrim($badUrl[1], "//");
+$goodHost = $array[$badHost];
+$goodURL = $goodHost . ":" . $badUrl[2] . ":" . $badUrl[3];
+$goodURL = ltrim($goodURL, "//");
+$goodURL = "http://" . $goodURL;
+$uploadURL = trim($goodURL);
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $uploadURL);
+curl_setopt($ch, CURLOPT_HEADER, true);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+curl_setopt($ch, CURLOPT_POST,1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+
+$result = curl_exec($ch);
+
+curl_close($ch);
 
 // delete video after uploaded
 $command = escapeshellcmd("rm ../videos/$vid");

@@ -60,31 +60,49 @@
 // $run = shell_exec($command);
 // echo $run;
 
-
-$vid = $_GET['vid'];
+$vid = "hello.txt";
 $array = [
-    "ip-172-31-26-8.ec2.internal:50075"=> "100.26.36.129:50075",
-"ip-172-31-31-46.ec2.internal:50075" => "34.203.213.13:50075",
-"ip-172-31-31-55.ec2.internal:50075" => "34.224.89.168:50075",
+    "ip-172-31-26-8.ec2.internal"=> "100.26.36.129",
+"ip-172-31-31-46.ec2.internal" => "34.203.213.13",
+"ip-172-31-31-55.ec2.internal" => "34.224.89.168",
 ];
 
-$url = "ec2-54-88-201-242.compute-1.amazonaws.com:50070/webhdfs/v1/videos/doah.ogv?op=OPEN";
+$url = "ec2-54-88-201-242.compute-1.amazonaws.com:50070/webhdfs/v1/videos/$vid?op=CREATE";
+$post = $_GET["fileName"];
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
 curl_setopt($ch, CURLOPT_HEADER, true);
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+
 $result = curl_exec($ch);
 if (preg_match('~Location: (.*)~i', $result, $match)) {
 $location = trim($match[1]);
 }
+curl_close($ch);
 
 $badUrl = explode(":", $location);
 $badHost = ltrim($badUrl[1], "//");
-echo $badHost;
 $goodHost = $array[$badHost];
 $goodURL = $goodHost . ":" . $badUrl[2] . ":" . $badUrl[3];
 $goodURL = ltrim($goodURL, "//");
-echo $goodURL;
+$goodURL = "http://" . $goodURL;
+$uploadURL = trim($goodURL);
+
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $uploadURL);
+curl_setopt($ch, CURLOPT_HEADER, true);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
+curl_setopt($ch, CURLOPT_POST,1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
+
+$result = curl_exec($ch);
+// if (preg_match('~Location: (.*)~i', $result, $match)) {
+// $location = trim($match[1]);
+// }
+curl_close($ch);
 
 ?>
