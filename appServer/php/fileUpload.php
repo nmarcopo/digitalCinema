@@ -9,8 +9,6 @@ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 //     alert("Sorry, only OGV files are allowed.");
 //     $uploadOk = 0;
 // }
-$hdfs = new WebHDFS('ec2-54-88-201-242.compute-1.amazonaws.com', "50070", "dr.who");
-$hdfs->create("videos/$vid", "../videos/$vid");
 
 set_time_limit(0);
 ini_set("memory_limit","2048M");
