@@ -32,7 +32,7 @@
                         <source src="
                         <?php
                             $vid = $_GET['vid'];
-                            $command = escapeshellcmd("./php/master.py videos/$vid");
+                            $command = escapeshellcmd("./php/download.py videos/$vid");
                             $run = shell_exec($command);
                             echo $run;
                         ?>
