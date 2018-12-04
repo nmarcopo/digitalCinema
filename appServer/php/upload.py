@@ -67,7 +67,7 @@ print(myerrormessage)
 
 
 
-time.sleep(5)
+# time.sleep(5)
 #for line in myerrormessage:
 print(myerrormessage)
 secondcommand = createURL(myerrormessage)

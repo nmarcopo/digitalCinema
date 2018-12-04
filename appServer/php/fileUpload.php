@@ -23,7 +23,7 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        header("Location: fileUploadToHadoop.php");
+        header("Location: fileUploadToHadoop.php?fileName=" . $_FILES["fileToUpload"]["name"]);
     } else {
         if ($_FILES['uploaded']['error'] !== UPLOAD_ERR_OK) {
             die("Upload failed with error code " . $_FILES['fileToUpload']['error']);

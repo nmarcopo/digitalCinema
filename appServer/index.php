@@ -23,15 +23,10 @@
     <div class="container">
         <div class="jumbotron">
             <h1 class="display-3">Hello!</h1>
-            <p class="lead">Welcome to whatever our project is called! Sign up or log in to start using our service.</p>
+            <p class="lead">Welcome to DigitalCinema! Click "Go Home" to start using our service.</p>
             <hr class="my-4">
             <p class="lead">
-                <!-- <a class="btn btn-primary bg-dark" href="#" role="button">Log in</a> -->
-                <button type="button" class="btn btn-primary bg-dark" data-toggle="modal" data-target="#signUpModal">Sign
-                    Up</button>
-                <button type="button" class="btn btn-primary bg-dark" data-toggle="modal" data-target="#logInModal">Log
-                    In</button>
-                <a href="home.php"><button type="button" class="btn btn-primary bg-dark">Go Home</button></a>
+                <a href="home.php"><button type="button" class="btn btn-primary btn-lg bg-dark">Go Home</button></a>
             </p>
         </div>
     </div>

@@ -22,8 +22,13 @@
     <br><br>
     <div class="container">
         <div class="jumbotron">
-            <h1 class="display-3">Uploading to Hadoop...</h1>
-            <p class="lead">Please wait while your video is uploaded to Hadoop...</p>
+            <h1 class="display-3">Uploaded!</h1>
+            <p class="lead">Your video has uploaded to Hadoop!</p>
+            <script>
+                setTimeout(() => {
+                    location.replace("../home.php");
+                }, 3000);
+            </script>
             <hr class="my-4">
             <div class="progress">
                 <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%"></div>
@@ -39,14 +44,11 @@
 </html>
 
 <?php
-// $vid = $_GET['vid'];
-// $command = escapeshellcmd("./php/download.py videos/$vid");
-// $run = shell_exec($command);
-// echo $run;
-function alert($msg) {
-    echo "<script type='text/javascript'>
-    alert('$msg');
-    </script>";
-}
-alert($_FILES['fileToUpload']['name']);
+$vid = $_GET['fileName'];
+$command = escapeshellcmd("../php/upload.py videos/$vid ../videos/$vid");
+$run = shell_exec($command);
+
+// delete video after uploaded
+$command = escapeshellcmd("rm ../videos/$vid");
+$run = shell_exec($command);
 ?>

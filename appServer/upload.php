@@ -29,7 +29,7 @@
                 <!-- Upload Profile Pic -->
                 <li class="list-group-item" style="border:solid; border-width: 1px">
                     <form action="php/fileUpload.php" method="post" enctype="multipart/form-data">
-                        <label for="fileToUpload">Select Video to Upload:</label><br>
+                        <label for="fileToUpload">Select .OGV Video to Upload:</label><br>
                         <div class="input-group">
                             <div class="custom-file">
                                 <input type="file" class="custom-file-input" name="fileToUpload" id="fileToUpload">

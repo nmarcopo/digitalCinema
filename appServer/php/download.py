@@ -65,7 +65,7 @@ myerrormessage=os.popen(command).read()
 
 
 
-time.sleep(1)
+# time.sleep(1)
 #for line in myerrormessage:
 secondcommand = createURL(myerrormessage)
 
