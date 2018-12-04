@@ -96,10 +96,9 @@ $vid = $_GET['fileName'];
 // curl_close($ch);
 
 
-$hdfs = new WebHDFS('ec2-54-88-201-242.compute-1.amazonaws.com', "50070", "dr.who");
-$hdfs->create("videos/$vid", "../videos/$vid");
+
 
 // delete video after uploaded
-$command = escapeshellcmd("rm ../videos/$vid");
-$run = shell_exec($command);
+// $command = escapeshellcmd("rm ../videos/$vid");
+// $run = shell_exec($command);
 ?>
