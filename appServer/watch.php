@@ -40,7 +40,7 @@
                             "ip-172-31-31-55.ec2.internal" => "34.224.89.168",
                             ];
 
-                            $url = "ec2-54-88-201-242.compute-1.amazonaws.com:50070/webhdfs/v1/videos/doah.ogv?op=OPEN";
+                            $url = "ec2-54-88-201-242.compute-1.amazonaws.com:50070/webhdfs/v1/videos/$vid?op=OPEN";
                             $ch = curl_init();
                             curl_setopt($ch, CURLOPT_URL, $url);
                             curl_setopt($ch, CURLOPT_HEADER, true);
