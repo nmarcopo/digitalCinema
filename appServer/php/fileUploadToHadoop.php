@@ -44,7 +44,7 @@
 </html>
 
 <?php
-// $vid = $_GET['fileName'];
+$vid = $_GET['fileName'];
 // $array = [
 //     "ip-172-31-26-8.ec2.internal"=> "100.26.36.129",
 // "ip-172-31-31-46.ec2.internal" => "34.203.213.13",
