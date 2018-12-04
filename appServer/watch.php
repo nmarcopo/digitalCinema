@@ -32,9 +32,17 @@
                         <source src="
                         <?php
                             $vid = $_GET['vid'];
-                            $command = escapeshellcmd("./php/download.py videos/$vid");
-                            $run = shell_exec($command);
-                            echo $run;
+                            $array = [
+                                "ip-172-31-26-8.ec2.internal:50075" => "100.26.36.129:50075",
+                                "ip-172-31-31-46.ec2.internal:50075" => "34.203.213.13:50075",
+                                "ip-172-31-31-55.ec2.internal:50075" => "34.224.89.168:50075",
+                            ];
+
+                            $array["ip-172-31-26-8.ec2.internal:50075"];
+                            
+                            // $command = escapeshellcmd("./php/download.py videos/$vid");
+                            // $run = shell_exec($command);
+                            // echo $run;
                         ?>
                         " type='video/ogg; codecs="theora, vorbis"' preload="none">
                         Your browser does not support the video tag.

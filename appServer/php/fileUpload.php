@@ -5,10 +5,17 @@ $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
 // Allow certain file formats
-if($imageFileType != "ogv") {
-    alert("Sorry, only OGV files are allowed.");
-    $uploadOk = 0;
-}
+// if($imageFileType != "ogv") {
+//     alert("Sorry, only OGV files are allowed.");
+//     $uploadOk = 0;
+// }
+
+set_time_limit(0);
+ini_set("memory_limit","2048M");
+ini_set('upload_max_filesize', '300M');
+ini_set('post_max_size', '350M');
+ini_set('max_input_time', 0);
+ini_set('max_execution_time', 300);
 
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 1e+7) {

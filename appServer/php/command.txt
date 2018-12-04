@@ -1,1 +1,1 @@
-curl -i -X PUT -T ../videos/robot1920.ogv "http://34.224.89.168:50075/webhdfs/v1/videos/robot1920.ogv?op=CREATE&namenoderpcaddress=ec2-54-88-201-242.compute-1.amazonaws.com:9000&overwrite=false"
+curl -i -X PUT -T ../videos/10secfail.ogv "http://34.224.89.168:50075/webhdfs/v1/videos/10secfail.ogv?op=CREATE&namenoderpcaddress=ec2-54-88-201-242.compute-1.amazonaws.com:9000&overwrite=false"
