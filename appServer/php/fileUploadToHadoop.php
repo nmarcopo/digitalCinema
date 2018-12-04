@@ -39,5 +39,14 @@
 </html>
 
 <?php
-
+// $vid = $_GET['vid'];
+// $command = escapeshellcmd("./php/download.py videos/$vid");
+// $run = shell_exec($command);
+// echo $run;
+function alert($msg) {
+    echo "<script type='text/javascript'>
+    alert('$msg');
+    </script>";
+}
+alert($_FILES['fileToUpload']['name']);
 ?>
