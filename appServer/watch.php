@@ -48,7 +48,7 @@
                             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
                             $result = curl_exec($ch);
                             if (preg_match('~Location: (.*)~i', $result, $match)) {
-                            $location = trim($match[1]);
+                                $location = trim($match[1]);
                             }
 
                             $badUrl = explode(":", $location);

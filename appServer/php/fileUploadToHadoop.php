@@ -45,8 +45,6 @@
 
 <?php
 $vid = $_GET['fileName'];
-// $command = escapeshellcmd("../php/upload.py videos/$vid ../videos/$vid");
-// $run = shell_exec($command);
 $array = [
     "ip-172-31-26-8.ec2.internal"=> "100.26.36.129",
 "ip-172-31-31-46.ec2.internal" => "34.203.213.13",
@@ -54,7 +52,7 @@ $array = [
 ];
 
 $url = "ec2-54-88-201-242.compute-1.amazonaws.com:50070/webhdfs/v1/videos/$vid?op=CREATE";
-$post = $_GET["fileName"];
+
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
 curl_setopt($ch, CURLOPT_HEADER, true);
@@ -68,6 +66,11 @@ $location = trim($match[1]);
 }
 curl_close($ch);
 
+$cfile = "@../videos/$vid;filename=$vid;Content-Type: video/ogg";
+$post = array(
+    'testData' => $cfile
+);
+
 $badUrl = explode(":", $location);
 $badHost = ltrim($badUrl[1], "//");
 $goodHost = $array[$badHost];
@@ -76,18 +79,11 @@ $goodURL = ltrim($goodURL, "//");
 $goodURL = "http://" . $goodURL;
 $uploadURL = trim($goodURL);
 
-$ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $uploadURL);
-curl_setopt($ch, CURLOPT_HEADER, true);
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, false);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
-curl_setopt($ch, CURLOPT_POST,1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 
-$result = curl_exec($ch);
+$comm = "curl -i -X PUT -T ../videos/$vid \"$uploadURL\"";
+$string = shell_exec($comm);
 
-curl_close($ch);
+echo $comm . "<br>" . $string . "<br>";
 
 // delete video after uploaded
 $command = escapeshellcmd("rm ../videos/$vid");
