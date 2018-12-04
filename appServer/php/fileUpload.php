@@ -23,6 +23,9 @@ ini_set('max_execution_time', 300);
 //     $uploadOk = 0;
 // }
 
+// alert("MIME TYPE: " . $_FILES["fileToUpload"]["type"]);
+// return;
+
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
     alert("Sorry, your file was not uploaded.");

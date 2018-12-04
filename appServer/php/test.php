@@ -68,7 +68,9 @@ $array = [
 ];
 
 $url = "ec2-54-88-201-242.compute-1.amazonaws.com:50070/webhdfs/v1/videos/$vid?op=CREATE";
-$post = $_GET["fileName"];
+$post = array(
+    'testData' => "@/videos/" . $_GET["fileName"]
+);
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
 curl_setopt($ch, CURLOPT_HEADER, true);
