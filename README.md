@@ -1,4 +1,4 @@
 # digitalCinema
 A project for Dr. Douglas Thain's Cloud Computing course.
-Austin Nicholas Sura
-Nicholas Vincent Marcopoli
+Austin Nicholas Sura (asura)
+Nicholas Vincent Marcopoli (nmarcopo)
