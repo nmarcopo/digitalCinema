@@ -35,12 +35,12 @@
                         <?php
                             $vid = $_GET['vid'];
                             $array = [
-                                "ip-172-31-26-8.ec2.internal"=> "100.26.36.129",
-                            "ip-172-31-31-46.ec2.internal" => "34.203.213.13",
-                            "ip-172-31-31-55.ec2.internal" => "34.224.89.168",
+                                "ip-172-31-17-11.ec2.internal"=> "18.212.239.105",
+                                "ip-172-31-19-105.ec2.internal" => "34.224.223.65",
+                                "ip-172-31-27-32.ec2.internal" => "52.201.254.137",
                             ];
 
-                            $url = "ec2-54-88-201-242.compute-1.amazonaws.com:50070/webhdfs/v1/videos/$vid?op=OPEN";
+                            $url = "ec2-54-152-241-221.compute-1.amazonaws.com:50070/webhdfs/v1/videos/$vid?op=OPEN";
                             $ch = curl_init();
                             curl_setopt($ch, CURLOPT_URL, $url);
                             curl_setopt($ch, CURLOPT_HEADER, true);
